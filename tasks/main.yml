@@ -1,9 +1,10 @@
 ---
 - name: Create /etc/hosts entries from inventory (non-local cluster)
   lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].ansible_ssh_host }} {{ item }}" state=present
+  when: hosts_add_inventory
   with_items: "{{ groups.all }}"
 
-- name: Add additinal host entries
+- name: Add additional host entries
   lineinfile: dest=/etc/hosts regexp='.*{{ item.name }}$' line="{{ item.ip }} {{ item.name }}" state=present
-  with_items: additional_hosts_entries
-  when: additional_hosts_entries is defined
+  with_items: "{{ additional_hosts_entries }}"
+  when: additional_hosts_entries

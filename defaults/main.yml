@@ -1,1 +1,3 @@
 hosts_default_interface: none
+hosts_add_inventory: false
+additional_hosts_entries: false

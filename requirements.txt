@@ -1,0 +1,5 @@
+testinfra==1.0.1
+-e git+https://visitor:visitor@pdihub.hi.inet/inndo/molecule#egg=molecule
+ansible==1.9.6
+ansible-lint==2.3.8
+yamllint==1.0.1

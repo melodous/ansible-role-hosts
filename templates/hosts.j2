@@ -1,0 +1,20 @@
+#{{ ansible_managed }}
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+
+{% for server in groups.all %}
+{% for network in hostvars[server].networks %}
+{% if hostvars[server].cluster == cluster %}
+{{ hostvars[server].networks[network].fixed }} {% if hosts_default_interface == network %} {{ server }} {% endif %} {{ server }}.{{ network }}
+
+{% elif hostvars[server].networks[network].floating is defined %}
+{{ hostvars[server].networks[network].floating }} {% if hosts_default_interface == network %} {{ server }} {% endif %} {{ server }}.{{ network }} 
+
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+{% if additional_hosts_entries is defined %}
+{% for host in additional_hosts_entries %}
+{{ host.ip }} {{ host.name }}
+{% endfor %}
+{% endif %}

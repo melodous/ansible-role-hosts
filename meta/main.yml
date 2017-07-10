@@ -1,0 +1,15 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: "Raúl Melo, Óscar Erades"
+
+  company: TelefonicaI+D
+  platforms:
+
+  - name: RedHat
+    versions:
+    - 6
+    - 6.5
+    - 7

@@ -1,0 +1,39 @@
+---
+ansible:
+#  requirements_file: requirements.yml
+  raw_env_vars:
+    ANSIBLE_FILTER_PLUGINS: filter_plugins
+
+vagrant:
+  raw_config_args:
+    - "ssh.insert_key = false"
+
+  platforms:
+    - name: rhel6
+      box: rhel/rhel-6
+    - name: rhel7
+      box: rhel/rhel-7
+
+  providers:
+    - name: openstack
+      type: openstack
+      box: 'os_dummy'
+      flavor: 'TID-01CPU-01GB-20GB'
+      networks:
+        - 'private_external'
+        - 'private_management'
+      floating_ip_pool:
+          - 'ext_inet'
+      raw_options:
+        sync_method: 'none'
+      platforms:
+        - name: rhel6
+          image: 'instel-core-rhel6_1604041309'
+          username: cloud-user
+        - name: rhel7
+          image: 'instel-core-rhel7_1604041142'
+          username: cloud-user
+  instances:
+    - name: ansible-hosts
+      ansible_groups:
+        - group_1

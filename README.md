@@ -1,40 +1,82 @@
+Welcome to hosts Ansible Role’s documentation!
+==============================================
+
 hosts
-================
-[![Build Status](http://10.95.82.44:8080/buildStatus/icon?job=ansible-hosts/ansible-hosts-master/ansible-hosts-master-build)](http://10.95.82.44:8080/job/ansible-hosts/job/ansible-hosts-master/job/ansible-hosts-master-build/)
+-----
 
-This adds hosts entries.
+Ansible role to manage /etc/hosts entries, it can automagically create
+entries for all server on the ansible inventory or create custom
+entries.
 
-## Requirements
+### Requirements
 
-None.
+N/A
 
-## Role Variables
-	
-	hosts_default_interface: none
+### Dependencies
 
-## Dependencies
+N/A
 
-None.
+### Example Playbook
 
-## Example Playbook
-
-    - hosts: db-servers
+    - hosts: servers
       roles:
-        - { role: ansible-hosts }
+        - { role: hosts }
 
+yum hosts ansible role default variables
+----------------------------------------
 
-## License
+#### Sections
 
-(c)2016 Telefónica S.A. All rights reserved.
+-   hosts entries management
 
-## Author Information
+### hosts entries management
 
-This role was created in 2015 by [Raul Melo](https://pdihub.hi.inet/rmf390).
+`hosts_add_inventory`
 
-Tests added by [Oscar Erades](https://pdihub.hi.inet/b-oedq).
+> If true create intreis on /etc/hosts per each hosts in ansible
+> inventory
 
-#Testing
+    hosts_add_inventory: false
 
-This role is designed to be tested with molecule (https://github.com/metacloud/molecule), performing the tests with testinfra(https://github.com/philpep/testinfra).
+..envvar:: additional\_hosts\_entries
 
-For more details, [check how automatic tests are defined](https://wikis.hi.inet/InnovationDO/index.php/Ansible_roles_and_automatic_testing).
+    additional_hosts_entries: false
+
+Example:
+
+    additional_hosts_entries:
+      - name: yum_server
+        ip: 192.168.1.200
+
+Changelog
+---------
+
+**hosts**
+
+This project adheres to Semantic Versioning and human-readable
+changelog.
+
+### hosts master - unreleased
+
+##### Added
+
+-   First addition
+
+##### Changed
+
+-   First change
+
+### hosts v0.0.0 - DATE
+
+##### Added
+
+-   Initial version
+
+Copyright
+---------
+
+hosts
+
+Copyright (C) DATE Raul Melo &lt;<raul.melo@opensolutions.cloud>&gt;
+
+LICENSE

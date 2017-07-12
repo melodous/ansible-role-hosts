@@ -1,19 +1,4 @@
 ---
 - hosts: all
-  pre_tasks:
-    - set_fact:
-        cluster: epg-dev2
-        preferred_connection: "private_external"
-        networks:
-          private_external:
-            floating: "192.168.22.86"
-            fixed: "172.168.3.43"
-          private_management:
-            floating: "10.95.83.176"
-            fixed: "192.168.3.43"
-
-        additional_hosts_entries:
-          - ip: 127.0.54.45
-            name: thisisatest
   roles:
-    - role: ansible-hosts
+    - role: hosts

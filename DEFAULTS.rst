@@ -1,0 +1,41 @@
+.. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+yum hosts ansible role default variables
+========================================
+
+.. contents:: Sections
+   :local:
+
+hosts entries management
+------------------------
+
+.. envvar:: hosts_add_inventory
+
+   If true create intreis on /etc/hosts per each hosts in ansible inventory
+
+::
+
+  hosts_add_inventory: false
+
+
+
+
+..envvar:: additional_hosts_entries
+
+  Dictionary with custom entries for /etc/hosts file
+
+::
+
+  additional_hosts_entries: false
+
+
+Example:
+
+::
+
+  additional_hosts_entries:
+    - name: yum_server
+      ip: 192.168.1.200
+
+
+

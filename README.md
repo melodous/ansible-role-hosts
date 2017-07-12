@@ -38,7 +38,9 @@ yum hosts ansible role default variables
 
     hosts_add_inventory: false
 
-..envvar:: additional\_hosts\_entries
+`additional_hosts_entries`
+
+> Dictionary with custom entries for /etc/hosts file
 
     additional_hosts_entries: false
 
@@ -66,7 +68,7 @@ changelog.
 
 -   First change
 
-### hosts v0.0.0 - DATE
+### hosts v0.0.1 - 2017/07/12
 
 ##### Added
 

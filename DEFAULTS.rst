@@ -20,7 +20,8 @@ hosts entries management
 
 
 
-..envvar:: additional_hosts_entries
+
+.. envvar:: additional_hosts_entries
 
   Dictionary with custom entries for /etc/hosts file
 

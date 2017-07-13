@@ -25,10 +25,14 @@ hosts_add_inventory: false
 #
 additional_hosts_entries: false
 #
-# Example:
+# Example: 
 #
-additional_hosts_entries:
-  - name: yum_server
-    ip: 192.168.1.200
+# .. code:: yaml [[[
+#
+#   additional_hosts_entries:
+#     - name: yum_server
+#       ip: 192.168.1.200
+# 
+# ]]]
 #
 # ]]]

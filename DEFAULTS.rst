@@ -32,11 +32,12 @@ hosts entries management
 
 Example:
 
-::
+.. code:: yaml
 
   additional_hosts_entries:
     - name: yum_server
       ip: 192.168.1.200
+
 
 
 

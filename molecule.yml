@@ -1,9 +1,4 @@
 ---
-dependency:
-  name: galaxy
-#  requirements_file: requirements.yml
-#  options:
-#    force: True
 driver:
   name: vagrant
 molecule:

@@ -4,7 +4,7 @@
 .venv/
 roles/
 pytestdebug.log
-junit.xml
+junit*.xml
 filter_plugins/*.pyc
 tests/*.pyc
 tests/__pycache__/

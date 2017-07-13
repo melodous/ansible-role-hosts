@@ -1,4 +1,4 @@
-APP                = zabbix-provisioner
+APP                = hosts
 ROOT               = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 REQ                = requirements.txt
 REQ_DOCS           = requirements_docs.txt

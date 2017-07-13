@@ -21,6 +21,15 @@ Changed
 
 - First change
 
+hosts v0.0.3 - 2017/07/13
+-------------------------
+
+Added
+~~~~~ 
+
+- Fixed testinfra tests
+
+
 hosts v0.0.2 - 2017/07/13
 -------------------------
 
